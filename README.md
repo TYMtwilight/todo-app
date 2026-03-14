@@ -1,1 +1,1 @@
-# todo-api
+# todo-app
