@@ -1,0 +1,10 @@
+# OS
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+.cursor/
+*.sqp
+*.swo
+*~
