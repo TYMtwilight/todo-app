@@ -2,6 +2,8 @@ package com.example.todo.dto;
 
 import java.time.LocalDateTime;
 
+import com.example.todo.entity.Todo;
+
 public class TodoResponse {
 
   private Long id;
@@ -12,15 +14,27 @@ public class TodoResponse {
 
   // --- コンストラクタ ---
 
-  public TodoResponse() {}
+  public TodoResponse() {
+  }
 
   public TodoResponse(Long id, String title, Boolean completed,
-                      LocalDateTime createdAt, LocalDateTime updatedAt) {
+      LocalDateTime createdAt, LocalDateTime updatedAt) {
     this.id = id;
     this.title = title;
     this.completed = completed;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
+  }
+
+  // --- Entity → DTO 変換 ---
+
+  public static TodoResponse from(Todo todo) {
+    return new TodoResponse(
+        todo.getId(),
+        todo.getTitle(),
+        todo.getCompleted(),
+        todo.getCreatedAt(),
+        todo.getUpdatedAt());
   }
 
   // --- getter ---
