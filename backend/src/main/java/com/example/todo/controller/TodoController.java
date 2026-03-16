@@ -69,7 +69,7 @@ public class TodoController {
    * PATCH /api/todos/{id}/toggle
    */
   @PatchMapping("/{id}/toggle")
-  public ResponseEntity<TodoResponse> toggle(@PathVariagle Long id) {
+  public ResponseEntity<TodoResponse> toggle(@PathVariable Long id) {
     TodoResponse toggled = todoService.toggleComplete(id);
     return ResponseEntity.ok(toggled);
   }
