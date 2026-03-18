@@ -32,17 +32,17 @@ public class TodoController {
   }
 
   /**
-   * TODO 一覧取得
+   * タスク一覧取得
    * GET /api/todos?status=ALL|ACTIVE|COMPLETED
    */
   @GetMapping
   public ResponseEntity<List<TodoResponse>> getAll(
-      @RequestParam(defaultValue = "ALL") String status) {
+      @RequestParam(name = "status", defaultValue = "ALL") String status) {
     return ResponseEntity.ok(todoService.findAll(status));
   }
 
   /**
-   * TODO 更新
+   * タスク更新
    * POST /api/todos
    */
   @PostMapping
@@ -53,12 +53,12 @@ public class TodoController {
   }
 
   /**
-   * TODO 更新
+   * タスク更新
    * PUT /api/todos/{id}
    */
   @PutMapping("/{id}")
   public ResponseEntity<TodoResponse> update(
-      @PathVariable Long id,
+      @PathVariable("id") Long id,
       @Valid @RequestBody TodoRequest request) {
     TodoResponse updated = todoService.update(id, request);
     return ResponseEntity.ok(updated);
@@ -69,17 +69,17 @@ public class TodoController {
    * PATCH /api/todos/{id}/toggle
    */
   @PatchMapping("/{id}/toggle")
-  public ResponseEntity<TodoResponse> toggle(@PathVariable Long id) {
+  public ResponseEntity<TodoResponse> toggle(@PathVariable("id") Long id) {
     TodoResponse toggled = todoService.toggleComplete(id);
     return ResponseEntity.ok(toggled);
   }
 
   /**
-   * TODO 削除
+   * タスク削除
    * DELETE /api/todos/{id}
    */
   @DeleteMapping("/{id}")
-  public ResponseEntity<Void> delete(@PathVariable Long id) {
+  public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
     todoService.delete(id);
     return ResponseEntity.noContent().build();
   }
