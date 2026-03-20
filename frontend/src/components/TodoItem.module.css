@@ -1,0 +1,60 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.15s;
+}
+
+.item:hover {
+  background-color: #f9fafb;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  flex: 1;
+  min-width: 0;
+}
+
+.checkbox {
+  width: 1.125rem;
+  height:1.125rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 1rem;
+  color: #111827;
+  word-break: break-word;
+}
+
+.completed {
+  font-size: 1rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+  word-break: break-word;
+}
+
+.deleteButton {
+  padding: 0.375rem 0.75rem;
+  background: none;
+  border: 1px solid #fecaca;
+  border-radius: 4px;
+  color: #ef4444;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+}
+
+.deleteButton:hover {
+  background-color: #fef2f2;
+}
