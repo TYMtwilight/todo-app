@@ -19,7 +19,7 @@ export default function TodoFilter({ current, onChange }: Props) {
         <button
           key={value}
           onClick={() => onChange(value)}
-        className={`${styles.button} ${current == value ? styles.active : ""}`}
+          className={`${styles.button} ${current == value ? styles.active : ""}`}
         >
           {label}
         </button>
