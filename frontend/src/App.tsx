@@ -15,6 +15,7 @@ export default function App() {
     addTodo,
     toggleTodo,
     removeTodo,
+    editTodo,
   } = useTodos();
 
   return (
@@ -31,6 +32,7 @@ export default function App() {
             todo={todo}
             onToggle={toggleTodo}
             onDelete={removeTodo}
+            onEdit={editTodo}
           />
         ))}
       </ul>

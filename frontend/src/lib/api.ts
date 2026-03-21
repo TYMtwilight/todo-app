@@ -36,7 +36,7 @@ export async function createTodo(title: string): Promise<Todo> {
 export async function updateTodo(id: number, data: TodoRequest): Promise<Todo> {
   const res = await fetch(`${API_BASE}/api/todos/${id}`, {
     method: "PUT",
-    headers: { "Content-Type": "applicetion/json" },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
   if (!res.ok) throw new Error("TODO の更新に失敗しました");

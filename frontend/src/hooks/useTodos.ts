@@ -32,6 +32,14 @@ export function useTodos() {
     setTodos((prev) => [created, ...prev]);
   };
 
+  // TODO 更新
+  const editTodo = async (id: number, title: string) => {
+    const updated = await api.updateTodo(id, { title });
+    setTodos((prev) => 
+      prev.map((todo) => (todo.id === id ? updated: todo))
+    );
+  }
+
   // 完了状態トグル
   const toggleTodo = async (id: number) => {
     const updated = await api.toggleTodo(id);
@@ -53,6 +61,7 @@ export function useTodos() {
     error,
     setFilter,
     addTodo,
+    editTodo,
     toggleTodo,
     removeTodo,
     reload: loadTodos,
